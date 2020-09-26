@@ -7,3 +7,6 @@ app = Flask(__name__)
 
 app.config.from_pyfile(General.CONFIG_FILE)
 db = SQLAlchemy(app)
+
+#DO NOT CHANGE THIS
+from advolet_app import route
