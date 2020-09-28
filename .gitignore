@@ -133,3 +133,7 @@ dmypy.json
 
 # Database 
 *.db
+
+
+# Node modules
+src/frontend/node_modules
