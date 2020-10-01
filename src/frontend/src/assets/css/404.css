@@ -1,0 +1,75 @@
+@font-face {
+	font-family: aller-rg;
+	src: url(../fonts/Aller/Aller_Rg.ttf);
+}
+main {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: fit-content;
+	text-align: center;
+}
+.img-404-page {
+	max-width: 1000px;
+}
+h1 {
+	font-family: aller-rg;
+	color: #4a4089;
+	word-spacing: 10px;
+}
+h1 a {
+	text-decoration: none;
+	color: #a27cfe;
+}
+h1 a .fas {
+	margin-left: -5px;
+}
+h1 a:hover > .fas {
+	transition: all 0.5s ease-out;
+	transform: translate(10px, 0px);
+}
+@media screen and (max-width: 1399.8px) {
+	.img-404-page {
+		max-width: 900px;
+	}
+}
+@media screen and (max-width: 1199.8px) {
+	.img-404-page {
+		max-width: 800px;
+	}
+	h1 {
+		font-size: 25px;
+	}
+}
+@media screen and (max-width: 999.8px) {
+	.img-404-page {
+		max-width: 700px;
+	}
+}
+@media screen and (max-width: 766.8px) {
+	.img-404-page {
+		max-width: 500px;
+	}
+	h1 {
+		font-size: 20px;
+	}
+}
+@media screen and (max-width: 575.8px) {
+	.img-404-page {
+		max-width: 400px;
+	}
+}
+@media screen and (max-width: 399.8px) {
+	.img-404-page {
+		max-width: 300px;
+	}
+	h1 {
+		font-size: 15px;
+	}
+}
+@media screen and (max-width: 333.8px) {
+	.img-404-page {
+		max-width: 250px;
+	}
+}
