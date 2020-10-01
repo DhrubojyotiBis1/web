@@ -5,8 +5,8 @@ It is the backend application for the Advolet's web application.
 - Install [python3](https://www.python.org/downloads/)
 - Install [pip](https://pip.pypa.io/en/stable/installing/)
 - Move to the `web` directory created after cloning
-- Run `pip install -r requirements.txt`
-- Run `python3 src/backend/run.py`
+- Run `pip install -r src/backend/requirements.txt`
+- Run `python3 src/backend/src/run.py`
 - Use curl, Postman, etc to test the APIs
 
 # How to run test
