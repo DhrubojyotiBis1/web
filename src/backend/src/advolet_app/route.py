@@ -1,10 +1,13 @@
 import bcrypt
+from flask_jwt import JWT, jwt_required, current_identity
 from flask import request
 
-from advolet_app import  app
-from advolet_app.models import User
-from advolet_app.constants import Route, Response_code, Request, General
+from . import  app
+from .models import User
+from .constants import Route, Response_code, Request, General
+from .security import authenticate, identity
 
+jwt = JWT(app, authenticate, identity)
 
 @app.route(Route.SIGNUP, methods=['POST'])
 def signup():
