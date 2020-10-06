@@ -4,42 +4,53 @@ import signupImg from "../assets/img/signup.svg";
 
 function signup() {
 	return (
-		<div class="signup-container">
-			<div class="signup">
-				<div class="signup-form-container">
-					<form action="" class="signup-form">
-						<h1 class="form-title">Sign Up</h1>
+		<div className="signup-container">
+			<div className="signup">
+				<div className="signup-form-container">
+					<form action="" className="signup-form">
+						<h1 className="form-title">Sign Up</h1>
 						<input
-							class="form-group"
+							className="form-group"
 							type="text"
 							name="name"
-							placeholder="Name"
-							autofocus
+							placeholder="Name*"
+							autoFocus
+							required
 						/>
 						<input
-							class="form-group"
+							className="form-group"
 							type="email"
 							name="email"
 							id="email"
-							placeholder="Your Email"
+							placeholder="Email*"
+							required
 						/>
 						<input
-							class="form-group"
-							type="password"
-							name="password"
-							placeholder="Generate password"
+							className="form-group"
+							type="number"
+							name="number"
+							placeholder="Contact Number"
 						/>
 						<input
-							class="form-group"
+							className="form-group"
 							type="password"
 							name="password"
-							placeholder="Confirm password"
+							placeholder="Password*"
+							required
 						/>
-						<label for="agree-terms" class="form-group agree">
+						<input
+							className="form-group"
+							type="password"
+							name="password"
+							placeholder="Confirm password*"
+							required
+						/>
+						<label for="agree-terms" className="form-group agree">
 							<input
 								type="checkbox"
 								name="agree-terms"
 								id="agree-terms"
+								required
 							/>
 							I agree to Terms and Conditions
 						</label>
@@ -47,14 +58,14 @@ function signup() {
 							type="submit"
 							name="signup-btn"
 							id="signup-btn"
-							class="form-group submit-btn"
+							className="form-group submit-btn"
 							value="Signup"
 						/>
 					</form>
 				</div>
-				<div class="signup-img-container">
+				<div className="signup-img-container">
 					<img
-						class="signup-img"
+						className="signup-img"
 						src={signupImg}
 						alt="Advolet signup"
 					/>
