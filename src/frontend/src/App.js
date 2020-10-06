@@ -1,8 +1,7 @@
 import React from "react";
-import page404 from "./components/404";
 import logo from "./logo.svg";
 import "./App.css";
-import signup from "./components/signup";
+import page404 from "./components/404";
 import SignUp from "./components/signup";
 
 // function App() {
