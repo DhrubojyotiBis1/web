@@ -29,7 +29,7 @@ class Signup extends React.Component {
 		};
 	}
 
-	formValid = ({ formErrors, name, email, password, confPassword }) => {
+	formValid = ({ formErrors, contact, ...rest }) => {
 		let valid = true;
 
 		// validate form errors being empty
@@ -39,42 +39,21 @@ class Signup extends React.Component {
 			}
 		});
 
-		if (name === null) {
-			valid = false;
-			this.setState((prevState) => ({
-				formErrors: {
-					...prevState.formErrors,
-					name: "Please fill this field",
-				},
-			}));
-		}
-		if (email === null) {
-			valid = false;
-			this.setState((prevState) => ({
-				formErrors: {
-					...prevState.formErrors,
-					email: "Please fill this field",
-				},
-			}));
-		}
-		if (password === null) {
-			valid = false;
-			this.setState((prevState) => ({
-				formErrors: {
-					...prevState.formErrors,
-					password: "Please fill this field",
-				},
-			}));
-		}
-		if (confPassword === null) {
-			valid = false;
-			this.setState((prevState) => ({
-				formErrors: {
-					...prevState.formErrors,
-					confPassword: "Please fill this field",
-				},
-			}));
-		}
+		// validate null form
+		Object.keys(rest).forEach((val) => {
+			// console.log(val);
+			if (this.state[val] === null) {
+				valid = false;
+				this.setState((prevState) => ({
+					formErrors: {
+						...prevState.formErrors,
+						[val]: "Please fill this form samjhe",
+					},
+				}));
+				console.log(this.state.formErrors);
+			}
+			// console.log(this.state);
+		});
 
 		return valid;
 	};
@@ -108,7 +87,7 @@ class Signup extends React.Component {
 				break;
 			case "contact":
 				formErrors.contact =
-					value.length > 0 && value.length != 10
+					value.length > 0 && value.length !== 10
 						? "10 characaters required"
 						: "";
 				break;
@@ -168,7 +147,7 @@ class Signup extends React.Component {
 								/>
 
 								<span className="tooltiptext">
-									<i class="fas fa-info-circle"></i>
+									<i className="fas fa-info-circle"></i>
 									<span className="tooltiptextSecond">
 										At least 5 characaters
 									</span>
@@ -181,14 +160,13 @@ class Signup extends React.Component {
 											? "form-group error"
 											: "form-group"
 									}
-									type="email"
 									name="email"
 									id="email"
 									placeholder="Email*"
 									onChange={this.handleChange}
 								/>
 								<span className="tooltiptext">
-									<i class="fas fa-info-circle"></i>
+									<i className="fas fa-info-circle"></i>
 									<span className="tooltiptextSecond">
 										don't forget @
 									</span>
@@ -207,7 +185,7 @@ class Signup extends React.Component {
 									onChange={this.handleChange}
 								/>
 								<span className="tooltiptext">
-									<i class="fas fa-info-circle"></i>
+									<i className="fas fa-info-circle"></i>
 									<span className="tooltiptextSecond">
 										without 0 or +91
 									</span>
@@ -229,7 +207,7 @@ class Signup extends React.Component {
 									className="far fa-eye show-eye"
 									onClick={this.showPassword}></i>
 								<span className="tooltiptext">
-									<i class="fas fa-info-circle"></i>
+									<i className="fas fa-info-circle"></i>
 									<span className="tooltiptextSecond">
 										Minimum eight characters, at least one
 										letter and one number, allowed special
