@@ -141,7 +141,7 @@ class Signup extends React.Component {
 									}
 									type="text"
 									name="name"
-									placeholder="Name*"
+									placeholder="Full Name*"
 									onChange={this.handleChange}
 									autoFocus
 								/>
